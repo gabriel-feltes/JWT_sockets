@@ -1,65 +1,64 @@
 import jwt
 import socket
 
-f = open("private_key.pem", "r")
-privkey = f.read()
-f.close()
+SECRET_KEY = b'dec7557-socket-udp-with-jwt'
 
-print("\n")
-print(privkey)
-print("\n")
+def save_response_to_file(response, is_valid):
+    with open('report.txt', 'a') as arquivo:
+        arquivo.write(response)
+        arquivo.write('\n')
+        arquivo.write('Verification: {}\n'.format('OK' if is_valid else 'NOT_OK'))
+        arquivo.write('\n')
 
-seq_number = int(input("seq_number: "))
-matricula = int(input("matricula: "))
+# Read the private key
+with open("private_key.pem", "r") as f:
+    privkey = f.read()
 
-payload = {
-"group": "NONAME",
-"seq_number": seq_number,
-"seq_max": 4,
-"matricula": matricula,
-}
+# Read the public key
+with open("public_key.pem", "r") as f:
+    pub_key = f.read()
 
-print("\n")
-print(payload)
+UDP_IP = input("UDP IP: ")
+UDP_PORT = int(input("UDP Port: "))
 
-jwt_enc = jwt.encode(payload, privkey.encode('utf-8'), algorithm='RS256')
+while True:
+    payloads = []
 
-print("\n")
-print(jwt_enc)
+    for _ in range(4):
+        seq_number = int(input("seq_number: "))
+        matricula = int(input("matricula: "))
 
-jwt_enc = bytes(jwt_enc.encode('utf-8'))
+        payload = {
+            "group": "NONAME",
+            "seq_number": seq_number,
+            "seq_max": 4,
+            "matricula": matricula,
+        }
+        payloads.append(payload)
 
-print("\n")
-print(jwt_enc)
+    for payload in payloads:
+        jwt_enc = jwt.encode(payload, privkey.encode('utf-8'), algorithm='RS256')
+        jwt_enc = jwt_enc.encode('utf-8')
 
-UDP_IP = 'gersoncamillo.seg.br'
-UDP_PORT = 34567
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        sock.sendto(jwt_enc, (UDP_IP, UDP_PORT))
+        sock.settimeout(2)
 
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.sendto(jwt_enc, (UDP_IP, UDP_PORT))
-sock.settimeout(2)
+        try:
+            data, addr = sock.recvfrom(1024)
+            jwt_answer = data.decode('utf-8')
 
-try:
-    data, addr = sock.recvfrom(1024)
-    jwt_answer = data.decode('utf-8')
+            try:
+                decoded_jwt = jwt.decode(jwt_answer, SECRET_KEY, algorithms=["HS256"], options={"verify_signature": True})
+                save_response_to_file(str(decoded_jwt), True)
+            except jwt.InvalidSignatureError:
+                save_response_to_file(jwt_answer, False)
+        except socket.timeout:
+            print("\n")
+            print("Error sending/receiving data")
+        finally:
+            sock.close()
 
-except socket.timeout:
-    print("\n")
-    print("Erro ao enviar/receber dados")
-    sock.close()
-
-pub_key = open('public_key.pem', 'r').read()
-
-print("\n")
-print(pub_key)
-print("\n")
-
-decode = jwt.decode(jwt_answer, key=pub_key, algorithms=["RS256"], options={"verify_signature": True})
-
-print("Decoded:")
-print(decode)
-print("\n")
-
-with open('report.txt', 'a') as arquivo:
-    arquivo.write('\n'.join(decode))
-    arquivo.write('\n')
+    another_token = input("Do you want to send another JWT token? (y/n): ")
+    if another_token.lower() != "y":
+        break
