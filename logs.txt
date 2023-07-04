@@ -1,0 +1,24 @@
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9yZXF1ZXN0IjoiYTFmNTc1ODFiNzYyNDAyMTg4ZDA5NGVmMGY5ZjBmZTAxZWYxZmY1ZWI0YzA1Y2E1ZjZhMzBkNmZjZDRkZDE5NSIsIm5leHRfbnVtYmVyIjoxLCJvdHBfbnVtYmVyIjoiMTk3OTAiLCJvdHBfdGltZXN0YW1wIjoxNjg4NDU4NjI1fQ.7LUlDjSUcWLeVGC5_DPJK-ZGkPsHZYRf6fbB_dAoKiE
+Verifica��o: OK
+Arquivo decodificado:
+{'id_request': 'a1f57581b762402188d094ef0f9f0fe01ef1ff5eb4c05ca5f6a30d6fcd4dd195', 'next_number': 1, 'otp_number': '19790', 'otp_timestamp': 1688458625}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9yZXF1ZXN0IjoiZGQ5YTViMjQ1ZmM2NGZiN2RlNjVjMTlkNjQzZjM0MDgwMDY4NmM5MTM5ZWQ4OTYzODhjMmEwOGJiNWE4YmQyYSIsIm5leHRfbnVtYmVyIjoyLCJvdHBfbnVtYmVyIjoiMTc1NDciLCJvdHBfdGltZXN0YW1wIjoxNjg4NDU4NjY1fQ.de9aDvt94S0ZIsx5DE_6_aheSTKfxSRizWTekQcBDJI
+Verifica��o: OK
+Arquivo decodificado:
+{'id_request': 'dd9a5b245fc64fb7de65c19d643f340800686c9139ed896388c2a08bb5a8bd2a', 'next_number': 2, 'otp_number': '17547', 'otp_timestamp': 1688458665}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9yZXF1ZXN0IjoiYWJhNDAyNTUyMmE3ZjkxNWRiZmI3NzdmYzY3Mzk3MGI1MTE2MjBhN2UwYTQ1MjlhMTlhMGU4YTU0N2I1MzMxNSIsIm5leHRfbnVtYmVyIjozLCJvdHBfbnVtYmVyIjoiMTgxNjAiLCJvdHBfdGltZXN0YW1wIjoxNjg4NDU4Njg2fQ.xXqZGeBEcQ6e6yLOd8nOZGj-fYdxugJSVTeLwkZ0rDM
+Verifica��o: OK
+Arquivo decodificado:
+{'id_request': 'aba4025522a7f915dbfb777fc673970b511620a7e0a4529a19a0e8a547b53315', 'next_number': 3, 'otp_number': '18160', 'otp_timestamp': 1688458686}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9yZXF1ZXN0IjoiY2Q2MjBhN2JiMDQ0NzczMjViMTQ4YzBlMzM2N2ZlMGU0YTEyOWYzNGY2NTE3MDgzY2VhN2MwOTBkOGVmNWRiYiIsIm5leHRfbnVtYmVyIjo0LCJvdHBfbnVtYmVyIjoiMTUxMDIiLCJvdHBfdGltZXN0YW1wIjoxNjg4NDU4NzAwfQ.jAcTTqzO9YA3N-kMq6YirMg7AtkgV9-3HxJzEpP5qys
+Verifica��o: OK
+Arquivo decodificado:
+{'id_request': 'cd620a7bb04477325b148c0e3367fe0e4a129f34f6517083cea7c090d8ef5dbb', 'next_number': 4, 'otp_number': '15102', 'otp_timestamp': 1688458700}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF9yZXF1ZXN0IjoiZjI0MzQyMzExYzUxY2NhM2IyNmU1Y2E4OWVhNWE1YTUyMGY4MTJhZTEzYmY2OTExZjQ2ZjI1YjRmNzkyN2EyOCIsIm5leHRfbnVtYmVyIjowLCJvdHBfbnVtYmVyIjoiOTY0MiIsIm90cF90aW1lc3RhbXAiOjE2ODg0NTg3MTB9.DE1hJ9IWN1_5r0lS9XNgDAVNj7i8krcx77Dp8dmLzFk
+Verifica��o: OK
+Arquivo decodificado:
+{'id_request': 'f24342311c51cca3b26e5ca89ea5a5a520f812ae13bf6911f46f25b4f7927a28', 'next_number': 0, 'otp_number': '9642', 'otp_timestamp': 1688458710}
