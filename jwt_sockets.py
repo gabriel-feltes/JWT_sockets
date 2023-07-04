@@ -15,7 +15,7 @@ def salvar_resposta_em_arquivo(resposta_bruta, resposta_decodificada, valida=Tru
     with open('logs.txt', 'a') as arquivo:
         arquivo.write(resposta_bruta)
         arquivo.write('\n')
-        arquivo.write('Verificação: {}\n'.format('OK\nArquivo decodificado:' if valida else 'NOT_OK'))
+        arquivo.write('Verification: {}\n'.format('OK\nArquivo decodificado:' if valida else 'NOT_OK'))
         arquivo.write(resposta_decodificada)
         arquivo.write('\n\n')
 
